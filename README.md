@@ -1,2 +1,2 @@
 # DHP-URL-Analyzer-Project_Sem-2
-News Analyzer: Web Application for URL-Based Text Analysis
+The repository contains a web application built with Flask, allowing users to submit URLs of news articles. The app retrieves article content, analyzes the text, and stores the results in a PostgreSQL database. The "app" file likely contains the main Flask code, while the "templates" folder includes "index.html" for submitting URLs,"result.html" display urls Analysis result,"login.html" contain admin login page and  "history.html" for viewing past analyses. The "requirements.txt" lists the necessary libraries and versions for hosting the application.
