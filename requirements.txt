@@ -5,3 +5,4 @@ nltk==3.8.1
 psycopg2==2.9.9
 requests==2.31.0
 Jinja2==3.1.2
+gunicorn==21.2.0
