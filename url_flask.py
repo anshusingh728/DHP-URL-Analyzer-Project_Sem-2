@@ -11,6 +11,7 @@ app.secret_key = 'your_secret_key_here'  # Set the secret key used by Flask to s
 
 # Connect to PostgreSQL database
 conn = psycopg2.connect(dbname='news_database', user='news_database_user', password='Ix6xhxuSTz6qGh936wnPMKJwA4CeLs52', host='dpg-cnmogjq1hbls739hkmtg-a')
+
 cur = conn.cursor()
 
 ADMIN_PASSWORD = "admin@728"  # Password required to access the admin panel.
