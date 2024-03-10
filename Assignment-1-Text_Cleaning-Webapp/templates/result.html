@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for character set and viewport -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title of the page -->
+    <title>Analysis Result</title>
+</head>
+<body>
+    <!-- Heading -->
+    <h2 style="color:brown;">Welcome! Here you can find the News Url Analysis Result</h2>
+    <!-- URL of the news article -->
+    <p style="color:blue;"><strong>URL:</strong> {{ url }}</p>
+    <!-- News heading -->
+    <p style="color:purple;"><strong style="color:black">News Heading:</strong> {{ news_heading }}</p>
+    <!-- News text -->
+    <p style="color:green"><strong style="color:black">News Text:</strong> {{ news_text }}</p>
+    <!-- Number of sentences in the news text -->
+    <p style="color:red"><strong>Number of Sentences:</strong> {{ num_sentences }}</p>
+    <!-- Number of words in the news text -->
+    <p style="color:red"><strong>Number of Words:</strong> {{ num_words }}</p>
+    <!-- Number of POS tags -->
+    <p style="color:red"><strong>Number of pos_tags:</strong> {{ num_sentences }}</p>
+    <!-- Publication date and time of the news article -->
+    <p style="color:red"><strong>Publication Datetime:</strong> {{ publication_datetime }}</p>
+    <!-- Part-of-speech (POS) tags -->
+    <p style="color:black"><strong>POS Tags:</strong> {{ pos_tags }}</p>
+</body>
+</html>
