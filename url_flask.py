@@ -5,6 +5,8 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk import pos_tag
 import psycopg2
 import nltk
+nltk.download('averaged_perceptron_tagger')
+
 nltk.download('punkt')
 nltk.download('universal_tagset')
 app = Flask(__name__, template_folder='templates')
