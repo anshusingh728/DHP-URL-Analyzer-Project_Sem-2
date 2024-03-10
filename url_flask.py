@@ -17,7 +17,6 @@ conn = psycopg2.connect(dbname='news_database', user='news_database_user', passw
 cur = conn.cursor()
 
 ADMIN_PASSWORD = "admin@728"  # Password required to access the admin panel.
-
 cur.execute('''CREATE TABLE IF NOT EXISTS url_data(
             url TEXT PRIMARY KEY,
             news_heading TEXT,
@@ -184,3 +183,7 @@ def admin_login():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+
+
+    
