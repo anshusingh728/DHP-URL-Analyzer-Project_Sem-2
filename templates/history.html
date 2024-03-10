@@ -9,20 +9,59 @@
         
     <!-- Inline CSS styles -->
     <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif; /* Use Arial font */
+            background-color: #f0f0f0; /* Light gray background */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+
         /* Styling for the table */
         table {
             border: 2px solid green; /* Set border color and width */
             border-collapse: collapse; /* Collapse borders */
             margin-top: 20px; /* Add margin above the table */
+            width: 80%; /* Set table width */
+            margin: auto; /* Center the table horizontally */
+            background-color: #fff; /* White background for table */
         }
+
         /* Styling for table headers and cells */
         th, td {
             border: 1px solid green; /* Set border color and width */
-            padding: 8px; /* Add padding */
+            padding: 10px; /* Add padding */
+            text-align: center; /* Center text horizontally */
         }
+
         /* Styling for table headers */
         th {
             color: brown; /* Set header text color */
+            background-color: #f0f0f0; /* Light gray background */
+        }
+
+        /* Styling for table body rows */
+        tr {
+            background-color: #ffffff; /* White background for table rows */
+        }
+
+        /* Styling for alternating table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2; /* Light gray background for even rows */
+        }
+
+        /* Styling for "Go Back" link */
+        a {
+            display: block; /* Display as block element */
+            margin-top: 20px; /* Add margin on top */
+            text-align: center; /* Center text horizontally */
+            color: #ff0000; /* Red color for link text */
+            text-decoration: none; /* Remove underline */
+        }
+
+        /* Hover effect for "Go Back" link */
+        a:hover {
+            text-decoration: underline; /* Add underline on hover */
         }
     </style>
 </head>
@@ -45,7 +84,7 @@
         <!-- Loop through each entry in the URL history -->
         {% for entry in url_history %}
         <!-- Table row for each entry -->
-        <tr style="color:blue">
+        <tr>
             <!-- Display the submitted URL -->
             <td>{{ entry[0] }}</td>
             <!-- Display the heading of the news article -->
@@ -60,9 +99,12 @@
         {% endfor %}
     </tbody>
 </table>
+<a href="javascript:history.back()">Go Back</a>
 
 </body>
 </html>
+
+          
 
 
 
