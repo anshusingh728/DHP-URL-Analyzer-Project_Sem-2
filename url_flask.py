@@ -5,6 +5,7 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk import pos_tag
 import psycopg2
 import nltk
+nltk.download('punkt')
 nltk.download('universal_tagset')
 app = Flask(__name__, template_folder='templates')
 app.secret_key = 'your_secret_key_here'  # Set the secret key used by Flask to securely sign session.
