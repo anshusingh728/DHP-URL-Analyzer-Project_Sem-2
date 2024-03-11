@@ -5,19 +5,25 @@ from nltk.tokenize import sent_tokenize, word_tokenize
 from nltk import pos_tag
 import psycopg2
 import nltk
-nltk.download('averaged_perceptron_tagger')
+import os
 
+nltk.download('averaged_perceptron_tagger')
 nltk.download('punkt')
 nltk.download('universal_tagset')
-app = Flask(__name__, template_folder='templates')
-app.secret_key = 'your_secret_key_here'  # Set the secret key used by Flask to securely sign session.
 
-ADMIN_PASSWORD = "admin@728"
+app = Flask(__name__, template_folder='templates')
+app.secret_key = os.environ.get('SECRET_KEY', 'your_secret_key_here')
+
+ADMIN_PASSWORD = os.environ.get('ADMIN_PASSWORD', "admin@728")
 
 # Connect to PostgreSQL database
-conn = psycopg2.connect(dbname='news_database', user='news_database_user', password='Ix6xhxuSTz6qGh936wnPMKJwA4CeLs52', host='dpg-cnmogjq1hbls739hkmtg-a')
+conn = psycopg2.connect(
+    dbname='news_database',
+    user='news_database_user',
+    password='Ix6xhxuSTz6qGh936wnPMKJwA4CeLs52',
+    host='dpg-cnmogjq1hbls739hkmtg-a'
+)
 cur = conn.cursor()
-ADMIN_PASSWORD = "admin@728"
 
 cur.execute('''CREATE TABLE IF NOT EXISTS url_data(
             url TEXT PRIMARY KEY,
@@ -185,13 +191,5 @@ def admin_login():
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-  
-    
-
-       
-    
 
     
