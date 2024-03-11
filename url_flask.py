@@ -25,7 +25,7 @@ conn = psycopg2.connect(
 )
 cur = conn.cursor()
 
-cur.execute('''CREATE TABLE IF NOT EXISTS url_data(
+cur.execute('''CREATE TABLE IF NOT EXISTS url_news(
             url TEXT PRIMARY KEY,
             news_heading TEXT,
             news_text TEXT,
@@ -119,7 +119,7 @@ def extract_articles_table(url):
 def store_analysis(url, news_heading, news_text, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count, publication_datetime, article_links):
     try:
         cur.execute("""
-            INSERT INTO url_data (url, news_heading, news_text, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count, publication_datetime, article_titles, article_links) 
+            INSERT INTO url_news (url, news_heading, news_text, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count, publication_datetime, article_titles, article_links) 
             VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             ON CONFLICT (url) DO NOTHING
         """, (url, news_heading, news_text, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count, publication_datetime, str(article_links.keys()), str(article_links.values())))
@@ -172,7 +172,7 @@ def admin_panel():
     if 'logged_in' not in session or not session['logged_in']:
         return redirect(url_for('admin_login'))
 
-    cur.execute("SELECT url, news_heading, publication_datetime, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count FROM url_data")
+    cur.execute("SELECT url, news_heading, publication_datetime, num_sentences, num_words, noun_count, verb_count, adjective_count, adverb_count FROM url_news")
     url_history = cur.fetchall()
     return render_template('history.html', url_history=url_history)
 
