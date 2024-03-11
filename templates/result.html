@@ -77,7 +77,8 @@
         <!-- Publication date and time of the news article -->
         <p ><strong style="color:red">Publication Datetime:</strong> {{ publication_datetime }}</p>
         <!-- Links to related articles -->
-        <p ><strong style="color:red">Articles Related links :</strong></p>
+        <p ><strong style="color:red">Articles Related links :</strong></p> 
+         <!-- it will display all article links inside times of india , bbc new and india today if you will enter main news link in place of article links  -->
         <ul>
             {% set counter = 1 %}
             {% for title, link in zip(article_titles, article_links) %}
